@@ -147,7 +147,7 @@ setProxy = maybe id f . proxy
   where f (Proxy host port) = addProxy host port
 
 setCheckResponse :: Options -> Request -> Request
-setCheckResponse = maybe id f . checkResponse
+setCheckResponse = maybe id f . checkStatus
   where f cs = ( & Lens.checkResponse .~ cs)
 
 prepareGet :: Options -> String -> IO Req
